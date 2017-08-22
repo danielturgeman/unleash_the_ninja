@@ -17,5 +17,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    #url()
+    url(r'^student/$', views.register_student, name='register_student'),
+    url(r'^teacher/$', views.register_teacher, name='register_teacher')
 ]

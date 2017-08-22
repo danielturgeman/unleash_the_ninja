@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block jumbotron %}
+<h1>Register as a Teacher</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    <button type="submit">Register</button>
+</form>
+
+
+{% endblock %}
+
+
+{% block feature %}
+
+{% endblock %}

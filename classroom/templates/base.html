@@ -1,1 +1,159 @@
-<h1> testing index page</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Daniel's University</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    {% load staticfiles %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script src="{% static 'js/classroom.js' %}"></script>
+        <link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css">
+
+    </head>
+
+	<body>
+
+    {% block header %}
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand em-text" href="/">E-Learn</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'register_student' %}">Student Registration</a></li>
+            <li><a href="{% url 'register_teacher' %}">Teacher Registration</a></li>
+              <li><a href="#contact">Login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    {% endblock %}
+
+    {% block jumbotron %}
+    <div class="jumbotron">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <h1>An E-Learning platform for all your needs</h1>
+            <p>A fun and easy way to share & capture the moments you live for</p>
+          </div>
+
+          <div class="col-md-6">
+              <h1>Try Now For Free!</h1>
+              <div class="showcase">
+                  <h3>Students</h3>
+                  <a href="{% url 'register_student' %}"><img class="showcase-img" src="{% static "images/students.png" %}" /></a>
+              </div>
+              <div class="showcase">
+                  <h3>Teachers</h3>
+                  <a href="{% url 'register_teacher' %}"><img class="showcase-img" src="{% static "images/teachers.jpg" %}" /></a>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+    {% endblock %}
+
+    {% block middle %}
+    <section id="middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="" class="demo">;
+            <h2>Lorem ipsum.</h2>
+            <p>Lorem ipsum words cannot describe how much i feel towards this objective </p>
+            <a href="#" class="btn btn-default">Read more</a>
+          </div>
+
+          <div class="col-md-4">
+             <img src="" class="demo">;
+            <h2>Lorem ipsum.</h2>
+            <p>Lorem ipsum words cannot describe how much i feel towards this objective </p>
+            <a href="#" class="btn btn-default">Read more</a>
+
+          </div>
+
+          <div class="col-md-4">
+             <img src="" class="demo">;
+            <h2>Lorem ipsum.</h2>
+            <p>Lorem ipsum words cannot describe how much i feel towards this objective </p>
+            <a href="#" class="btn btn-default">Read more</a>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
+
+    {% block feature %}
+    <section id="feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h1>Gamma Features</h1>
+            <ul>
+              <li><i class="glyphicon glyphicon-ok"></i> Sample text one</li>
+              <li><i class="glyphicon glyphicon-ok"></i> Sample text two</li>
+              <li><i class="glyphicon glyphicon-ok"></i> Sample text three</li>
+              <li><i class="glyphicon glyphicon-ok"></i> Sample text four</li>
+            </ul>
+
+          </div>
+          <div class="col-md-4 col-md-offset-2">
+            <img class="big-logo" src="{% static "images/classroom.jpg" %}/">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'register_student' %}">Student Registration</a></li>
+              <li><a href="{% url 'register_teacher' %}">Teacher Registration</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+
+          </div>
+          <div class="col-md-6">
+            <p>Copyright &copy; 2017, All Rights Reserved</p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
