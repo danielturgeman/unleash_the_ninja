@@ -1,0 +1,54 @@
+div.profile{
+
+text-align:center;
+border-radius: 5px;
+border: 1px solid white;
+padding: 15px
+
+}
+
+div.profile img{
+
+    width:50px;
+    height: 50px;
+   
+}
+
+div.profile p{
+    padding: 20px;
+    margin: 0 0 10px;
+    display: inline-block;
+    font-size: 15px
+}
+
+div.dashboard.courses{
+    margin: 10px;
+}
+
+div.dashboard.courses:hover{
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;    
+    opacity: 0.5
+}
+
+div h3{
+    color: cornflowerblue
+}
+
+.table .table {
+    background-color: teal
+}
+
+.table-bordered {
+    color: darkslateblue;
+    border: 1px solid #ddd;
+}
+
+div.table{
+  margin-bottom: 0px
+}
+
+table.course-table{
+    margin-top: 15px;
+}

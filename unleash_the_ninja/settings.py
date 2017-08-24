@@ -28,6 +28,7 @@ DEBUG = True
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'classroom',
     'django.contrib.admin',
@@ -131,3 +132,5 @@ STATICFILES_DIRS = [
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+LOGIN_REDIRECT_URL = '/account/'

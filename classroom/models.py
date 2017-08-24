@@ -43,5 +43,5 @@ class Course(models.Model):
     start_date = models.DateTimeField(default=datetime.now)
     limit = models.IntegerField()
 
-    def _str_(self):
-        return "Course - '{}'".format(self.name)
+    def __str__(self):
+        return "Course - {}".format(self.name)

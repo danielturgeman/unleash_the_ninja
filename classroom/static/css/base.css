@@ -87,3 +87,31 @@ footer a{
 footer p{
   text-align: right;
 }
+
+div.register{
+    background-color: lightgrey;
+    padding: 20px;
+    margin-top: 30px;
+    text-align:center;
+}
+
+span.helptext{
+    display:none
+}
+
+section#middle{
+    background:lightgrey
+}
+
+div.registration-header h1 {
+    background: lightgrey;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+div.login{
+
+    text-align:center;
+    background: lightgrey;
+
+    }

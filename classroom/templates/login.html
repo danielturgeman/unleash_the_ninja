@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block jumbotron %}
-<div class="register">
+<div class="login">
     <div class="registration-header">
-<h1>Register as a Teacher</h1>
+<h1>Welcome!</h1>
+        <h2>Log In</h2>
 </div>
 <form action="" method="POST">
     {% csrf_token %}
-    {{ user_form.as_p }}
-    <button type="submit">Register</button>
+    {{ login_form.as_p }}
+    <button type="submit">Log In</button>
 </form>
     </div>
 

@@ -37,11 +37,11 @@
           <div class="col-md-4 col-md-offset-2">
 
               <div class = "profile">
-            <h3>Hello {{ student.user.first_name }}</h3>
+            <h3>Hello {{ teacher.user.first_name }}</h3>
                   <img src="{% static 'images/avatar.png' %}" />
             <p>Welcome to your profile!</p>
-              <p>Your Username: {{ student.user.username }}</p>
-             <p>Your Email: {{ student.user.email }}</p>
+              <p>Your Username: {{ teacher.user.username }}</p>
+             <p>Your Email: {{ teacher.user.email }}</p>
 
               </div>
           </div>
@@ -53,7 +53,7 @@
                   <h3>My Courses</h3>
               </div>
 
-              <a href="{% url 'student_join_course' student.id %}"><div class="dashboard profile courses add-course">
+              <a href="{% url 'student_join_course' teacher.id %}"><div class="dashboard profile courses add-course">
                   <h3>Add A Course</h3>
               </div>
               </a>

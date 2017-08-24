@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<head>
+    {% load staticfiles %}
+    <link href="{% static 'css/join_course.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+{% block jumbotron %}
+<h1>Join a class!</h1>
+<div class="join">
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ course_form.as_p }}
+    <button type="submit">Join</button>
+</form>
+</div>
+
+{% block middle %}
+<h1>..........</h1>
+<h1>......</h1>
+{% endblock %}
+
+{% endblock %}
+
+{% block feature %}
+
+{% endblock %}

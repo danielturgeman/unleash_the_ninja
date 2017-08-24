@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Daniel's University</title>
+        <title>E-Learning</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -13,8 +13,10 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-        <script src="{% static 'js/classroom.js' %}"></script>
+        <script src="{% static 'js/student.js' %}"></script>
         <link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/student.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/join_course.css' %}" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -38,7 +40,7 @@
             <li class="active"><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'register_student' %}">Student Registration</a></li>
             <li><a href="{% url 'register_teacher' %}">Teacher Registration</a></li>
-              <li><a href="#contact">Login</a></li>
+              <li><a href="{% url 'my_view' %}">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,7 +55,6 @@
 
           <div class="col-md-6">
             <h1>An E-Learning platform for all your needs</h1>
-            <p>A fun and easy way to share & capture the moments you live for</p>
           </div>
 
           <div class="col-md-6">
@@ -78,24 +79,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img src="" class="demo">;
-            <h2>Lorem ipsum.</h2>
-            <p>Lorem ipsum words cannot describe how much i feel towards this objective </p>
+            <h2>Top Classes</h2>
+            <p>We provide the best classes available</p>
             <a href="#" class="btn btn-default">Read more</a>
           </div>
 
           <div class="col-md-4">
-             <img src="" class="demo">;
-            <h2>Lorem ipsum.</h2>
-            <p>Lorem ipsum words cannot describe how much i feel towards this objective </p>
+            <h2>Most Experienced Teachers</h2>
+            <p>Teachers who can share their knowledge </p>
             <a href="#" class="btn btn-default">Read more</a>
 
           </div>
 
           <div class="col-md-4">
-             <img src="" class="demo">;
-            <h2>Lorem ipsum.</h2>
-            <p>Lorem ipsum words cannot describe how much i feel towards this objective </p>
+            <h2>Brightest Students</h2>
+            <p>From all over the world!</p>
             <a href="#" class="btn btn-default">Read more</a>
 
           </div>
@@ -112,12 +110,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5">
-            <h1>Gamma Features</h1>
+            <h1>E-Learn Features</h1>
             <ul>
-              <li><i class="glyphicon glyphicon-ok"></i> Sample text one</li>
-              <li><i class="glyphicon glyphicon-ok"></i> Sample text two</li>
-              <li><i class="glyphicon glyphicon-ok"></i> Sample text three</li>
-              <li><i class="glyphicon glyphicon-ok"></i> Sample text four</li>
+              <li><i class="glyphicon glyphicon-ok"></i>Top Classes</li>
+              <li><i class="glyphicon glyphicon-ok"></i>Brightest Students</li>
+              <li><i class="glyphicon glyphicon-ok"></i>Polished Professors</li>
+              <li><i class="glyphicon glyphicon-ok"></i>Growing Network</li>
             </ul>
 
           </div>
@@ -139,7 +137,7 @@
               <li><a href="{% url 'index' %}">Home</a></li>
               <li><a href="{% url 'register_student' %}">Student Registration</a></li>
               <li><a href="{% url 'register_teacher' %}">Teacher Registration</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{% url 'my_view' %}">Login</a></li>
             </ul>
 
           </div>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block jumbotron %}
+{% endblock %}
+
+{% block feature %}
+
+<section id="feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h1>{{ course.name }} Features</h1>
+            <ul>
+              <li><i class="glyphicon glyphicon-ok"></i> Category - {{ course.category }}</li>
+              <li><i class="glyphicon glyphicon-ok"></i> Start Date - {{ course.start_date }}</li>
+              <li><i class="glyphicon glyphicon-ok"></i> Size - {{ course.limit }}</li>
+              <li><i class="glyphicon glyphicon-ok"></i> Difficulty - {{ course.difficulty }}</li>
+            </ul>
+
+          </div>
+          <div class="col-md-4 col-md-offset-2">
+            <img class="big-logo" src="{% static "images/classroom.jpg" %}/">
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+
+{% block middle %}
+
+<section id="middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="" class="demo">;
+            <h2>Course: {{course.name}}</h2>
+            <p>Learn more about the course below. </p>
+            <a href="#" class="btn btn-default">Read more</a>
+          </div>
+
+          <div class="col-md-4">
+             <img src="" class="demo">;
+            <h2>Category: {{ course.category }}</h2>
+            <p>For a brief explanation of the category read more below.</p>
+            <a href="#" class="btn btn-default">Read more</a>
+
+          </div>
+
+          <div class="col-md-4">
+             <img src="" class="demo">;
+            <h2>Difficulty: {{ course.difficulty }}</h2>
+              <p>Prefer more challenging difficulties? Read more below.</p>
+            <a href="#" class="btn btn-default">Read more</a>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
