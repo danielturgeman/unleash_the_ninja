@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login
 from .forms import UserForm, StudentForm, TeacherForm, CourseForm, LoginForm
 from classroom.models import Student, Teacher, Course
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+
 
 import json
 from django.http import JsonResponse
@@ -24,7 +26,7 @@ def register_student(request):
             user.save()
             student = Student(user=user)
             student.save()
-            return HttpResponseRedirect('/student/' + student.id)
+            return HttpResponseRedirect('/student/' + str(student.id))
         else:
             context = {
                 'user_form': user_form
@@ -46,7 +48,7 @@ def register_teacher(request):
                 user.save()
                 teacher = Teacher(user=user)
                 teacher.save()
-                return HttpResponseRedirect('/teacher/' + teacher.id)
+                return HttpResponseRedirect('/teacher/' + str(teacher.id))
             else:
                 context = {
                     'user_form': user_form
@@ -110,7 +112,7 @@ def student_courses(request, id):
         return HttpResponse(json.dumps(context))
 
 
-
+@login_required
 def teacher_page(request, id):
     teacher = Teacher.objects.get(pk=id)
     course_list = Course.objects.filter(teacher=id)
@@ -124,6 +126,7 @@ def teacher_page(request, id):
     else:
         return render(request, 'teacher.html', context)
 
+@login_required()
 def student_page(request, id):
     student = Student.objects.get(pk=id)
     course_list = Course.objects.filter(student=id)
@@ -145,12 +148,11 @@ def student_join_course(request, id):
         if course_form.is_valid():
             course = course_form.save()
             #course exists
-            if Course.objects.filter(name=course_form.name).count() > 0:
-                #add students to course
-                print(course_form['name'])
+            if Course.objects.filter(name=course.name).count() > 0:
                 courses = Course.objects.filter(name=course.name)
 
-            return HttpResponseRedirect('/student/' + id)
+
+            return HttpResponseRedirect('/student/' + str(id))
         else:
             context = {
                 'user_form': CourseForm()
@@ -174,7 +176,7 @@ def teacher_add_course(request, id):
                 print(course_form['name'])
                 courses = Course.objects.filter(name=course.name)
 
-            return HttpResponseRedirect('/teacher/' + id)
+            return HttpResponseRedirect('/teacher/' + str(id))
         else:
             context = {
                 'user_form': CourseForm()
@@ -216,10 +218,10 @@ def my_view(request):
         if user is not None:
             if user.is_active and is_student:
                 login(request, user)
-                return HttpResponseRedirect('/student/{}'.format(student.id))
+                return HttpResponseRedirect('/student/' + str(student.id))
             elif user.is_active and is_teacher:
                 login(request, user)
-                return HttpResponseRedirect('/teacher/{}'.format(teacher.id))
+                return HttpResponseRedirect('/teacher/' + str(teacher.id))
 
             else:
                 return HttpResponse('Not an active account')
